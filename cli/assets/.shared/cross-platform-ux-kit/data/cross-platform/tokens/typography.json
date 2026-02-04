@@ -1,0 +1,210 @@
+{
+  "scale": {
+    "xs": {
+      "size": "12px",
+      "lineHeight": "16px",
+      "tailwind": "text-xs",
+      "swiftui": ".caption2",
+      "flutter": "bodySmall",
+      "use": "Captions, labels, helper text"
+    },
+    "sm": {
+      "size": "14px",
+      "lineHeight": "20px",
+      "tailwind": "text-sm",
+      "swiftui": ".caption",
+      "flutter": "bodyMedium",
+      "use": "Secondary text, metadata"
+    },
+    "base": {
+      "size": "16px",
+      "lineHeight": "24px",
+      "tailwind": "text-base",
+      "swiftui": ".body",
+      "flutter": "bodyLarge",
+      "use": "Body text, paragraphs"
+    },
+    "lg": {
+      "size": "18px",
+      "lineHeight": "28px",
+      "tailwind": "text-lg",
+      "swiftui": ".title3",
+      "flutter": "titleMedium",
+      "use": "Lead text, emphasized body"
+    },
+    "xl": {
+      "size": "20px",
+      "lineHeight": "28px",
+      "tailwind": "text-xl",
+      "swiftui": ".title2",
+      "flutter": "titleLarge",
+      "use": "Card titles, section headers"
+    },
+    "2xl": {
+      "size": "24px",
+      "lineHeight": "32px",
+      "tailwind": "text-2xl",
+      "swiftui": ".title",
+      "flutter": "headlineSmall",
+      "use": "Page section titles"
+    },
+    "3xl": {
+      "size": "30px",
+      "lineHeight": "36px",
+      "tailwind": "text-3xl",
+      "swiftui": ".largeTitle",
+      "flutter": "headlineMedium",
+      "use": "Page titles"
+    },
+    "4xl": {
+      "size": "36px",
+      "lineHeight": "40px",
+      "tailwind": "text-4xl",
+      "swiftui": "custom(36)",
+      "flutter": "headlineLarge",
+      "use": "Hero titles"
+    },
+    "5xl": {
+      "size": "48px",
+      "lineHeight": "48px",
+      "tailwind": "text-5xl",
+      "swiftui": "custom(48)",
+      "flutter": "displaySmall",
+      "use": "Display text"
+    },
+    "6xl": {
+      "size": "60px",
+      "lineHeight": "60px",
+      "tailwind": "text-6xl",
+      "swiftui": "custom(60)",
+      "flutter": "displayMedium",
+      "use": "Large display"
+    },
+    "7xl": {
+      "size": "72px",
+      "lineHeight": "72px",
+      "tailwind": "text-7xl",
+      "swiftui": "custom(72)",
+      "flutter": "displayLarge",
+      "use": "Hero display"
+    }
+  },
+  "weight": {
+    "thin": { "value": 100, "tailwind": "font-thin", "swiftui": ".ultraLight", "flutter": "FontWeight.w100" },
+    "extralight": { "value": 200, "tailwind": "font-extralight", "swiftui": ".thin", "flutter": "FontWeight.w200" },
+    "light": { "value": 300, "tailwind": "font-light", "swiftui": ".light", "flutter": "FontWeight.w300" },
+    "normal": { "value": 400, "tailwind": "font-normal", "swiftui": ".regular", "flutter": "FontWeight.w400" },
+    "medium": { "value": 500, "tailwind": "font-medium", "swiftui": ".medium", "flutter": "FontWeight.w500" },
+    "semibold": { "value": 600, "tailwind": "font-semibold", "swiftui": ".semibold", "flutter": "FontWeight.w600" },
+    "bold": { "value": 700, "tailwind": "font-bold", "swiftui": ".bold", "flutter": "FontWeight.w700" },
+    "extrabold": { "value": 800, "tailwind": "font-extrabold", "swiftui": ".heavy", "flutter": "FontWeight.w800" },
+    "black": { "value": 900, "tailwind": "font-black", "swiftui": ".black", "flutter": "FontWeight.w900" }
+  },
+  "tracking": {
+    "tighter": { "value": "-0.05em", "tailwind": "tracking-tighter", "use": "Large display text" },
+    "tight": { "value": "-0.025em", "tailwind": "tracking-tight", "use": "Headlines" },
+    "normal": { "value": "0em", "tailwind": "tracking-normal", "use": "Body text" },
+    "wide": { "value": "0.025em", "tailwind": "tracking-wide", "use": "Uppercase labels" },
+    "wider": { "value": "0.05em", "tailwind": "tracking-wider", "use": "All caps headers" },
+    "widest": { "value": "0.1em", "tailwind": "tracking-widest", "use": "Spaced out labels" }
+  },
+  "leading": {
+    "none": { "value": 1, "tailwind": "leading-none", "use": "Single line, icons" },
+    "tight": { "value": 1.25, "tailwind": "leading-tight", "use": "Headlines" },
+    "snug": { "value": 1.375, "tailwind": "leading-snug", "use": "Subheadings" },
+    "normal": { "value": 1.5, "tailwind": "leading-normal", "use": "Body text" },
+    "relaxed": { "value": 1.625, "tailwind": "leading-relaxed", "use": "Long-form content" },
+    "loose": { "value": 2, "tailwind": "leading-loose", "use": "Spacious reading" }
+  },
+  "semantic": {
+    "display": {
+      "size": "4xl",
+      "weight": "bold",
+      "tracking": "tight",
+      "leading": "tight"
+    },
+    "heading1": {
+      "size": "3xl",
+      "weight": "bold",
+      "tracking": "tight",
+      "leading": "tight"
+    },
+    "heading2": {
+      "size": "2xl",
+      "weight": "semibold",
+      "tracking": "tight",
+      "leading": "snug"
+    },
+    "heading3": {
+      "size": "xl",
+      "weight": "semibold",
+      "tracking": "normal",
+      "leading": "snug"
+    },
+    "heading4": {
+      "size": "lg",
+      "weight": "medium",
+      "tracking": "normal",
+      "leading": "normal"
+    },
+    "body": {
+      "size": "base",
+      "weight": "normal",
+      "tracking": "normal",
+      "leading": "relaxed"
+    },
+    "bodySmall": {
+      "size": "sm",
+      "weight": "normal",
+      "tracking": "normal",
+      "leading": "normal"
+    },
+    "caption": {
+      "size": "xs",
+      "weight": "normal",
+      "tracking": "wide",
+      "leading": "normal"
+    },
+    "label": {
+      "size": "sm",
+      "weight": "medium",
+      "tracking": "normal",
+      "leading": "none"
+    },
+    "button": {
+      "size": "sm",
+      "weight": "medium",
+      "tracking": "normal",
+      "leading": "none"
+    },
+    "code": {
+      "size": "sm",
+      "weight": "normal",
+      "tracking": "normal",
+      "leading": "normal",
+      "font": "monospace"
+    }
+  },
+  "platform": {
+    "web": {
+      "system": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "mono": "ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace"
+    },
+    "electron": {
+      "system": "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "mono": "'SF Mono', Menlo, Consolas, monospace"
+    },
+    "swiftui": {
+      "system": ".systemFont",
+      "mono": ".monospacedSystemFont"
+    },
+    "react-native": {
+      "system": "System",
+      "mono": "Menlo"
+    },
+    "flutter": {
+      "system": "Roboto (Android), SF Pro (iOS)",
+      "mono": "Roboto Mono"
+    }
+  }
+}

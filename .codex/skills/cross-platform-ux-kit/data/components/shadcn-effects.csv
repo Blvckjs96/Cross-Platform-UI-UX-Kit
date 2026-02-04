@@ -1,0 +1,61 @@
+No,Effect,Category,Implementation,Trigger,Duration,Props,Example,Notes
+1,Button Hover Background,Hover State,"hover:bg-primary/90 transition-colors",Hover,150ms,"background-color","<Button className=""hover:bg-primary/90 transition-colors"">",Use color shift not scale for buttons
+2,Button Press Scale,Active State,"active:scale-[0.98] transition-transform",Click/Touch,50ms,transform,"<Button className=""active:scale-[0.98] transition-transform"">",Subtle scale feels more native
+3,Button Disabled Opacity,Disabled State,"disabled:opacity-50 disabled:cursor-not-allowed",Disabled prop,0ms,"opacity, cursor","<Button disabled className=""disabled:opacity-50"">",Always pair with cursor-not-allowed
+4,Card Hover Shadow,Hover State,"hover:shadow-lg transition-shadow",Hover,200ms,box-shadow,"<Card className=""hover:shadow-lg transition-shadow"">",Shadow lift creates depth hierarchy
+5,Card Hover Border,Hover State,"hover:border-primary transition-colors",Hover,150ms,border-color,"<Card className=""hover:border-primary transition-colors"">",Subtle border change for selection hint
+6,Card Hover Lift,Hover State,"hover:-translate-y-1 hover:shadow-md transition-all",Hover,200ms,"transform, box-shadow","<Card className=""hover:-translate-y-1 hover:shadow-md transition-all"">",Combine translate and shadow for premium lift
+7,Input Focus Ring,Focus State,"focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",Focus,0ms,"ring, ring-offset","<Input className=""focus-visible:ring-2 focus-visible:ring-ring"">",Use focus-visible to avoid mouse click rings
+8,Input Focus Border,Focus State,"focus:border-primary transition-colors",Focus,150ms,border-color,"<Input className=""focus:border-primary transition-colors"">",Alternative to ring for minimal design
+9,Input Error State,Error State,"border-destructive focus-visible:ring-destructive",Error,0ms,"border, ring","<Input className=""border-destructive focus-visible:ring-destructive"">",Apply via aria-invalid or error prop
+10,Input Shake Error,Error State,"animate-shake (custom keyframes)",Error Submit,400ms,transform,"<Input className={error ? 'animate-shake' : ''}>",Use sparingly - can feel aggressive
+11,Link Hover Underline,Hover State,"hover:underline underline-offset-4",Hover,0ms,text-decoration,"<a className=""hover:underline underline-offset-4"">",underline-offset improves readability
+12,Link Hover Color,Hover State,"hover:text-primary transition-colors",Hover,150ms,color,"<a className=""hover:text-primary transition-colors"">",Combine with underline for clarity
+13,Icon Button Hover,Hover State,"hover:bg-accent hover:text-accent-foreground",Hover,150ms,"background, color","<Button variant=""ghost"" size=""icon"" className=""hover:bg-accent"">",Provides visual feedback for icon-only buttons
+14,Icon Rotate Hover,Hover State,"group-hover:rotate-12 transition-transform",Parent Hover,200ms,transform,"<Button className=""group""><Icon className=""group-hover:rotate-12"" /></Button>",Use group for parent-triggered child animations
+15,Badge Pulse,Attention,"animate-pulse",Always,2000ms,opacity,"<Badge className=""animate-pulse"">New</Badge>",Use for new/live indicators only
+16,Badge Ping,Notification,"relative after:animate-ping after:absolute after:inset-0",Always,1000ms,"scale, opacity","<span className=""relative flex""><span className=""animate-ping absolute...""></span><Badge>3</Badge></span>",Layered ping behind static badge
+17,Avatar Ring Online,Status,"ring-2 ring-green-500",Online Status,0ms,ring,"<Avatar className=""ring-2 ring-green-500"">",Green ring indicates online/available
+18,Avatar Ring Busy,Status,"ring-2 ring-amber-500",Busy Status,0ms,ring,"<Avatar className=""ring-2 ring-amber-500"">",Amber ring indicates busy/away
+19,Skeleton Shimmer,Loading,"animate-pulse bg-muted",Loading,2000ms,opacity,"<Skeleton className=""animate-pulse"">",Default skeleton effect
+20,Skeleton Gradient,Loading,"bg-gradient-to-r from-muted via-muted/50 to-muted animate-shimmer",Loading,1500ms,background-position,"<Skeleton className=""animate-shimmer"">",More premium shimmer effect
+21,Loading Spinner,Loading,"animate-spin text-muted-foreground",Loading,1000ms,transform,"<Loader2 className=""animate-spin"" />",Lucide Loader2 icon works best
+22,Loading Dots,Loading,"animate-bounce [animation-delay] per dot",Loading,1000ms,transform,"<span className=""animate-bounce"">...</span>",Stagger delay for each dot
+23,Progress Bar Fill,Progress,"transition-all duration-500",Value Change,500ms,width,"<Progress value={75} className=""transition-all duration-500"" />",Smooth width transition on value change
+24,Progress Indeterminate,Loading,"animate-indeterminate (translateX loop)",Loading,1500ms,transform,"<Progress indeterminate />",Sliding bar for unknown duration
+25,Switch Thumb Slide,Toggle,"data-[state=checked]:translate-x-4 transition-transform",State Change,200ms,transform,"<SwitchThumb className=""transition-transform"" />",Built into Switch component
+26,Checkbox Check,Toggle,"data-[state=checked]:animate-check",State Change,200ms,stroke-dashoffset,"Built into Checkbox",SVG path animation for check mark
+27,Radio Dot Scale,Toggle,"data-[state=checked]:scale-100 scale-0",State Change,150ms,transform,"Built into RadioGroup",Dot scales in on selection
+28,Accordion Arrow Rotate,Toggle,"data-[state=open]:rotate-180 transition-transform",Open/Close,200ms,transform,"<ChevronDown className=""transition-transform data-[state=open]:rotate-180"" />",Arrow rotates to indicate state
+29,Collapsible Height,Toggle,"grid-rows-[0fr] data-[state=open]:grid-rows-[1fr] transition-all",Open/Close,200ms,grid-template-rows,"CSS Grid approach for smooth height",More performant than height: auto
+30,Dropdown Content,Overlay Entry,"animate-in fade-in-0 zoom-in-95",Open,200ms,"opacity, scale","Built into DropdownMenuContent",Default shadcn dropdown animation
+31,Dialog Backdrop,Overlay Entry,"animate-in fade-in-0",Open,200ms,opacity,"Built into DialogOverlay",Backdrop fade with no motion
+32,Dialog Content,Overlay Entry,"animate-in fade-in-0 zoom-in-95 slide-in-from-bottom-2",Open,200ms,"opacity, scale, translateY","Built into DialogContent",Combines fade zoom and slight slide
+33,Sheet Slide,Overlay Entry,"animate-in slide-in-from-right (or other direction)",Open,300ms,transform,"Built into SheetContent side prop",Direction based on side prop
+34,Toast Slide In,Notification,"animate-in slide-in-from-top-full fade-in-0",Appear,300ms,"transform, opacity","Built into Sonner/Toast",Slides from edge of viewport
+35,Toast Slide Out,Notification,"animate-out slide-out-to-right-full fade-out-0",Dismiss,200ms,"transform, opacity","Built into Sonner/Toast",Slides out on dismiss
+36,Tooltip Fade,Overlay,"animate-in fade-in-0 zoom-in-95",Hover Delay,150ms,"opacity, scale","Built into TooltipContent",Quick fade with subtle zoom
+37,Popover Content,Overlay,"animate-in fade-in-0 zoom-in-95 slide-in-from-[side]",Open,200ms,"opacity, scale, translate","Built into PopoverContent",Direction based on side prop
+38,Context Menu,Overlay,"animate-in fade-in-0 zoom-in-95",Right Click,150ms,"opacity, scale","Built into ContextMenuContent",Fast appear for right-click context
+39,Navigation Indicator,Navigation,"transition-all duration-300",Route Change,300ms,"left, width",Custom underline/pill that slides,"Used for animated tab indicators"
+40,Tab Content Fade,Navigation,"animate-in fade-in-0",Tab Switch,150ms,opacity,"Built into TabsContent",Content fades on tab change
+41,Sidebar Collapse,Navigation,"transition-[width] duration-300",Toggle,300ms,width,"Built into Sidebar",Width transition for collapse
+42,Menu Item Highlight,Hover State,"bg-accent transition-colors",Hover/Focus,100ms,background,"Built into MenuItem variants",Fast feedback for menu navigation
+43,Scroll Shadow,Scroll,"shadow-[inset_0_-10px_10px_-10px_rgba(0,0,0,0.1)]",Scroll Position,0ms,box-shadow,Applied when scrolled,"Indicates more content above/below"
+44,Scroll Fade,Scroll,"mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",Always,0ms,mask-image,CSS mask for fade edges,"Premium scroll container effect"
+45,Focus Within Highlight,Focus,"focus-within:ring-2 focus-within:ring-ring",Child Focus,0ms,ring,"<div className=""focus-within:ring-2"">",Highlight container when child focused
+46,Group Hover Child,Hover State,"group-hover:opacity-100 opacity-0",Parent Hover,150ms,opacity,"<div className=""group""><span className=""opacity-0 group-hover:opacity-100"">",Reveal child elements on parent hover
+47,Staggered List Enter,Entrance,"[&>*:nth-child(n)]:animation-delay-[calc(n*50ms)]",Mount,varies,animation-delay,CSS custom property for delay,"Sequential list item appearance"
+48,Drag Shadow,Drag,"shadow-2xl scale-105 rotate-2",Dragging,0ms,"shadow, transform","Applied via drag state",Visual feedback for dragged item
+49,Drop Target Highlight,Drag,"border-dashed border-2 border-primary bg-primary/5",Drag Over,0ms,"border, background","Applied via dragover event",Indicates valid drop zone
+50,Selection Checkbox,Selection,"opacity-0 group-hover:opacity-100 group-data-[selected]:opacity-100",Hover/Selected,150ms,opacity,Checkbox appears on hover or selection,"Row/card selection pattern"
+51,Resize Handle,Resize,"opacity-0 group-hover:opacity-100",Hover,150ms,opacity,"<ResizableHandle className=""opacity-0 group-hover:opacity-100"">",Show handle only on hover
+52,Truncate Fade,Text,"after:absolute after:right-0 after:bg-gradient-to-l after:from-background",Always,0ms,background,Gradient fade for truncated text,"Alternative to text-ellipsis"
+53,Number Increment,Value Change,"tabular-nums transition-all",Value Change,300ms,number,"Use motion/framer-motion for counting",Animated number changes
+54,Chart Bar Grow,Data,"transition-all duration-500",Mount/Update,500ms,height,Applied to chart bars,"Bars grow from bottom on load"
+55,Chart Line Draw,Data,SVG stroke-dasharray animation,Mount,1000ms,stroke-dashoffset,Applied to chart paths,"Line draws from left to right"
+56,Image Load Fade,Loading,"opacity-0 transition-opacity duration-300",onLoad,300ms,opacity,"<img onLoad className=""opacity-100"">",Fade in after image loads
+57,Lazy Content Reveal,Loading,"animate-in fade-in-0 slide-in-from-bottom-4",Intersection,300ms,"opacity, transform",Triggered by IntersectionObserver,"Reveal content on scroll into view"
+58,Theme Toggle,Theme,"transition-colors duration-300",Theme Change,300ms,colors,"Applied to body/root element",Smooth color transitions on theme change
+59,Dark Mode Toggle,Theme,"dark:bg-background transition-colors",Preference,300ms,background,Via dark: variant,"Background transitions between modes"
+60,Cursor Pointer,Interaction,cursor-pointer,Hover,0ms,cursor,"<Button className=""cursor-pointer"">",Required for all clickable elements

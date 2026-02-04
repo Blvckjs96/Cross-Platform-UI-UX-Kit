@@ -1,0 +1,31 @@
+No,Category,Guideline,Description,Do,Don't,Platform Notes
+1,Window,Match native window chrome,Window should feel native to the OS,Use titleBarStyle hiddenInset on macOS hidden on Windows,Use web-style window decorations,Platform-specific window styling required
+2,Window,Implement proper drag regions,Titlebar areas must be draggable,-webkit-app-region: drag on titlebar -webkit-app-region: no-drag on buttons,Forget drag regions making window immovable,Drag regions required for frameless windows
+3,Window,Remember window state,Position and size should persist across sessions,Save bounds on resize/move restore on launch validate visible,Start with fixed size every time lose position,Use electron-store or similar for persistence
+4,Window,Handle multi-display correctly,Window should appear on valid display,Check if saved position is visible on current display setup,Restore to position that's now off-screen,screen.getDisplayMatching for validation
+5,Keyboard,Use platform-correct shortcuts,Shortcuts should match OS conventions,Cmd on macOS Ctrl on Windows for primary shortcuts,Same shortcuts across all platforms,CmdOrCtrl+ for cross-platform accelerators
+6,Keyboard,Register global shortcuts,Some shortcuts should work app-wide,globalShortcut.register for app-wide hotkeys,Only use in-page shortcuts,Unregister on app quit to free shortcuts
+7,Keyboard,Support system shortcuts,Standard shortcuts must work,Cmd+C Cmd+V Cmd+Q should work as expected,Override system shortcuts for other purposes,role-based menu items handle standard shortcuts
+8,Menu,Create proper application menu,App menu is expected on desktop,Menu.setApplicationMenu with proper structure,Skip application menu entirely,macOS requires app menu Windows optional
+9,Menu,Use menu item roles,Leverage built-in menu behaviors,Use role: copy paste quit etc for standard items,Manually implement standard menu behaviors,Roles handle accessibility and proper behavior
+10,Menu,Implement context menus,Right-click should show relevant actions,menu.popup() on contextmenu event context-aware items,No context menu or single global menu,Different menus based on clicked element
+11,Tray,Create system tray icon,Tray provides background access,Tray icon with context menu for common actions,Skip tray icon for background apps,Template images on macOS for menu bar style
+12,Tray,Handle tray interactions correctly,Click behavior differs by platform,Click to toggle window right-click for menu on macOS,Same behavior on all platforms,macOS: click=window Windows: click=menu typically
+13,Dialog,Use native dialogs,Dialogs should match OS appearance,dialog.showOpenDialog showSaveDialog showMessageBox,Custom HTML dialogs for system operations,Native dialogs feel more trustworthy
+14,Dialog,Parent dialogs to windows,Dialogs should be modal to window,Pass parentWindow to dialog methods,Floating dialogs that can get lost behind app,Modal attachment prevents window confusion
+15,Files,Handle file associations,App should open associated files,Register file types in package.json open-file event,Ignore file drops and associations,Build configuration for file associations
+16,Files,Implement drag and drop,Files should be droppable into app,Handle dragover drop events process files correctly,Web-only drag implementation missing native feel,Native file paths available in drop event
+17,Security,Enable context isolation,Renderer must be isolated from Node,contextIsolation: true sandbox: true in webPreferences,contextIsolation: false nodeIntegration: true,Security best practice required for modern Electron
+18,Security,Use contextBridge,Expose minimal API to renderer,contextBridge.exposeInMainWorld with specific functions,Expose entire node modules to renderer,Type-safe preload API recommended
+19,Security,Validate IPC channels,Only handle expected channels,Whitelist valid channels in preload script,Accept any channel from renderer,Channel validation prevents injection
+20,Updates,Implement auto-updates,App should update automatically,electron-updater with proper signing and server,Manual updates only requiring download,Code signing required for auto-update
+21,Updates,Handle update lifecycle,Updates should not interrupt work,Notify when update ready install on restart,Force restart immediately on update download,Update-downloaded event for user choice
+22,Performance,Lazy load main process,Reduce startup time,Dynamic require for modules not needed at startup,Import everything at top of main process,Startup time critical for desktop apps
+23,Performance,Optimize renderer memory,Long-running app accumulates memory,Clean up listeners remove references on view change,Memory leaks from unremoved listeners,DevTools Memory tab for leak detection
+24,Performance,Use native modules carefully,Native modules affect startup and compatibility,Prefer pure JS alternatives lazy load native modules,Require heavy native modules synchronously,node-gyp rebuild for each Electron version
+25,IPC,Use invoke/handle pattern,Async IPC with proper error handling,ipcRenderer.invoke + ipcMain.handle for request-response,send/on for everything including async,Invoke/handle provides Promise-based API
+26,IPC,Batch IPC operations,Reduce IPC overhead,Send batched data in single IPC call,Many sequential IPC calls for related operations,IPC has overhead per call
+27,Storage,Use correct data paths,Store data in platform-appropriate location,app.getPath userData for user data documents etc,Hardcoded paths or app directory,Platform-specific paths handled automatically
+28,Storage,Choose appropriate storage,Different data needs different storage,electron-store for settings SQLite for structured data,localStorage for everything,localStorage 5MB limit not suitable for all data
+29,Notifications,Use native notifications,Notifications should match OS style,new Notification with title body icon,Web notification API only,Native notifications support actions and replies
+30,Accessibility,Test with screen readers,Desktop screen readers must work,Test with VoiceOver NVDA JAWS,Assume web a11y is sufficient,Desktop screen readers have different behaviors

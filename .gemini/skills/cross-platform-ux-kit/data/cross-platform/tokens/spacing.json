@@ -1,0 +1,98 @@
+{
+  "base": {
+    "unit": 4,
+    "description": "Base unit in pixels. All spacing values are multiples of this."
+  },
+  "scale": {
+    "0": { "value": "0px", "tailwind": "0", "swiftui": "0", "flutter": "0", "use": "No spacing" },
+    "px": { "value": "1px", "tailwind": "px", "swiftui": "1", "flutter": "1", "use": "Hairline borders" },
+    "0.5": { "value": "2px", "tailwind": "0.5", "swiftui": "2", "flutter": "2", "use": "Micro adjustments" },
+    "1": { "value": "4px", "tailwind": "1", "swiftui": "4", "flutter": "4", "use": "Tight spacing, icon gaps" },
+    "1.5": { "value": "6px", "tailwind": "1.5", "swiftui": "6", "flutter": "6", "use": "Small internal padding" },
+    "2": { "value": "8px", "tailwind": "2", "swiftui": "8", "flutter": "8", "use": "Default small gap, button padding" },
+    "2.5": { "value": "10px", "tailwind": "2.5", "swiftui": "10", "flutter": "10", "use": "Medium-small spacing" },
+    "3": { "value": "12px", "tailwind": "3", "swiftui": "12", "flutter": "12", "use": "Card padding, form gaps" },
+    "3.5": { "value": "14px", "tailwind": "3.5", "swiftui": "14", "flutter": "14", "use": "Comfortable padding" },
+    "4": { "value": "16px", "tailwind": "4", "swiftui": "16", "flutter": "16", "use": "Default padding, section gaps" },
+    "5": { "value": "20px", "tailwind": "5", "swiftui": "20", "flutter": "20", "use": "Generous padding" },
+    "6": { "value": "24px", "tailwind": "6", "swiftui": "24", "flutter": "24", "use": "Large gaps, card margins" },
+    "7": { "value": "28px", "tailwind": "7", "swiftui": "28", "flutter": "28", "use": "Section dividers" },
+    "8": { "value": "32px", "tailwind": "8", "swiftui": "32", "flutter": "32", "use": "Major section spacing" },
+    "9": { "value": "36px", "tailwind": "9", "swiftui": "36", "flutter": "36", "use": "Large section gaps" },
+    "10": { "value": "40px", "tailwind": "10", "swiftui": "40", "flutter": "40", "use": "Hero spacing" },
+    "11": { "value": "44px", "tailwind": "11", "swiftui": "44", "flutter": "44", "use": "Touch target minimum" },
+    "12": { "value": "48px", "tailwind": "12", "swiftui": "48", "flutter": "48", "use": "Large component height" },
+    "14": { "value": "56px", "tailwind": "14", "swiftui": "56", "flutter": "56", "use": "Navigation height" },
+    "16": { "value": "64px", "tailwind": "16", "swiftui": "64", "flutter": "64", "use": "Header height, major spacing" },
+    "20": { "value": "80px", "tailwind": "20", "swiftui": "80", "flutter": "80", "use": "Section padding" },
+    "24": { "value": "96px", "tailwind": "24", "swiftui": "96", "flutter": "96", "use": "Large section margins" },
+    "28": { "value": "112px", "tailwind": "28", "swiftui": "112", "flutter": "112", "use": "Hero section spacing" },
+    "32": { "value": "128px", "tailwind": "32", "swiftui": "128", "flutter": "128", "use": "Major layout spacing" },
+    "36": { "value": "144px", "tailwind": "36", "swiftui": "144", "flutter": "144", "use": "Extra large spacing" },
+    "40": { "value": "160px", "tailwind": "40", "swiftui": "160", "flutter": "160", "use": "Sidebar width" },
+    "44": { "value": "176px", "tailwind": "44", "swiftui": "176", "flutter": "176", "use": "Wide sidebar" },
+    "48": { "value": "192px", "tailwind": "48", "swiftui": "192", "flutter": "192", "use": "Panel width" },
+    "52": { "value": "208px", "tailwind": "52", "swiftui": "208", "flutter": "208", "use": "Medium panel" },
+    "56": { "value": "224px", "tailwind": "56", "swiftui": "224", "flutter": "224", "use": "Large panel" },
+    "60": { "value": "240px", "tailwind": "60", "swiftui": "240", "flutter": "240", "use": "Wide panel" },
+    "64": { "value": "256px", "tailwind": "64", "swiftui": "256", "flutter": "256", "use": "Navigation drawer width" },
+    "72": { "value": "288px", "tailwind": "72", "swiftui": "288", "flutter": "288", "use": "Wide drawer" },
+    "80": { "value": "320px", "tailwind": "80", "swiftui": "320", "flutter": "320", "use": "Mobile breakpoint, sidebar max" },
+    "96": { "value": "384px", "tailwind": "96", "swiftui": "384", "flutter": "384", "use": "Card max width" }
+  },
+  "semantic": {
+    "component": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "12px",
+      "lg": "16px",
+      "xl": "24px"
+    },
+    "layout": {
+      "xs": "16px",
+      "sm": "24px",
+      "md": "32px",
+      "lg": "48px",
+      "xl": "64px"
+    },
+    "page": {
+      "gutter": "16px",
+      "margin": "24px",
+      "section": "48px",
+      "hero": "96px"
+    }
+  },
+  "platform": {
+    "web": {
+      "container-sm": "640px",
+      "container-md": "768px",
+      "container-lg": "1024px",
+      "container-xl": "1280px",
+      "container-2xl": "1536px"
+    },
+    "electron": {
+      "titlebar-height": "32px",
+      "sidebar-min": "200px",
+      "sidebar-max": "320px",
+      "panel-min": "280px"
+    },
+    "swiftui": {
+      "safe-area-top": "47px",
+      "safe-area-bottom": "34px",
+      "navigation-bar": "44px",
+      "tab-bar": "49px"
+    },
+    "react-native": {
+      "status-bar": "44px",
+      "navigation-bar": "56px",
+      "tab-bar": "49px",
+      "bottom-inset": "34px"
+    },
+    "flutter": {
+      "app-bar": "56px",
+      "bottom-nav": "56px",
+      "fab": "56px",
+      "drawer-width": "304px"
+    }
+  }
+}

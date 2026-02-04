@@ -1,0 +1,31 @@
+No,Category,Guideline,Description,Do,Don't,Platform Notes
+1,Widgets,Everything is a widget,Flutter composes UI from widget tree,Build widget trees with composition,Imperative UI updates like other frameworks,Stateless and Stateful widgets
+2,Widgets,Choose correct widget type,StatelessWidget vs StatefulWidget matters,StatelessWidget for pure presentation Stateful when local state needed,StatefulWidget for everything,Consider if state can live in parent instead
+3,Widgets,Use const constructors,Const widgets are more efficient,const keyword for immutable widgets,Create new widget instances unnecessarily,Const constructors prevent rebuild when parent rebuilds
+4,Layout,Master layout widgets,Core layout widgets for all UI,Column Row Stack Padding Container Expanded Flexible,Nested Containers for layout,SizedBox for spacing more efficient than Container
+5,Layout,Understand constraints,Constraints flow down sizes flow up,Parent provides constraints child picks size in constraints,Fight constraint system with unbounded widgets,Flexible and Expanded resolve unbounded issues
+6,Layout,Handle overflow,Content may exceed available space,SingleChildScrollView or ListView for scrollable,Unbounded Column in Column causing RenderFlex overflow,Wrap in scrollable or constrain size
+7,Navigation,Use Navigator 2.0,Declarative navigation with Router,GoRouter or auto_route for declarative navigation,Navigator.push only for simple apps,Deep linking requires declarative approach
+8,Navigation,Handle back button,Android back button must work,WillPopScope or PopScope for intercept,Ignore back button handling,iOS swipe back handled by CupertinoPageRoute
+9,Navigation,Pass data through routes,Routes need data passing,Constructor parameters or route arguments,Global state for route-specific data,Typed route parameters with code generation
+10,State,Choose state solution,State management affects architecture,Provider Riverpod or Bloc for app state setState for local,Prop drilling or global variables,setState fine for widget-local ephemeral state
+11,State,Handle async state,Loading error and data states,AsyncValue or similar for async data FutureBuilder,Unhandled loading and error states,ConnectionState for FutureBuilder/StreamBuilder
+12,State,Dispose resources,Controllers and streams need cleanup,dispose() method to clean up controllers subscriptions,Memory leaks from undisposed resources,initState and dispose lifecycle pair
+13,Theming,Use ThemeData,Centralized theme configuration,ThemeData with colorScheme textTheme,Hardcoded colors and styles,ColorScheme for Material 3 colors
+14,Theming,Support dark mode,App should respond to system theme,ThemeMode.system with light and dark ThemeData,Single theme ignoring preference,MediaQuery.platformBrightnessOf for detection
+15,Theming,Material vs Cupertino,Match platform design language,MaterialApp for Android CupertinoApp for iOS,Material widgets on iOS or vice versa,Platform-adaptive widgets available
+16,Lists,Use ListView.builder,Builder for efficient long lists,ListView.builder for dynamic lists,ListView with children for long lists,itemCount and itemBuilder for virtualization
+17,Lists,Optimize list items,List items affect scroll performance,const widgets RepaintBoundary for complex items,Heavy build in itemBuilder,cacheExtent for prefetch tuning
+18,Animation,Use implicit animations,AnimatedFoo widgets for simple cases,AnimatedContainer AnimatedOpacity for automatic animation,AnimationController for simple property changes,Implicit animations handle duration and curve
+19,Animation,AnimationController for control,Explicit control when needed,AnimationController with SingleTickerProviderStateMixin,Implicit animations when you need control,dispose controller to prevent memory leaks
+20,Animation,Hero for shared element,Shared element transitions between routes,Hero widget with matching tag on both routes,Manual coordinate-based shared transitions,Hero requires same tag and Navigator transition
+21,Performance,const widgets,Const prevents unnecessary rebuilds,const constructor and const keyword,Rebuilding widgets that haven't changed,Linter rule prefer_const_constructors
+22,Performance,Keys for identity,Keys preserve state during reorder,Key on stateful list items,Relying on index when items reorder,ValueKey ObjectKey UniqueKey types
+23,Performance,Profile with DevTools,Measure before optimizing,Flutter DevTools for performance profiling,Guessing at performance issues,Profile release mode not debug
+24,Platform,Platform-aware UI,UI should match platform expectations,Platform.isIOS .isAndroid for platform checks,Identical UI on all platforms,PlatformWidget pattern for abstraction
+25,Platform,Use platform channels,Native code integration when needed,MethodChannel for platform-specific features,Pure Dart when native API needed,Pigeon for type-safe code generation
+26,Accessibility,Semantic widgets,Screen readers need semantic tree,Semantics widget with label hint,Inaccessible custom paint or gestures,SemanticLabel for Image and Icon
+27,Accessibility,Test with screen reader,TalkBack and VoiceOver testing,Enable screen reader test full flows,Assume default accessibility sufficient,Semantic ordering and grouping
+28,Text,Handle text scaling,System text size settings respected,textScaleFactor considered in layout,Fixed heights that break with large text,MediaQuery.textScaleFactorOf for checks
+29,Text,Rich text and styling,Text styling options,TextSpan for inline styling Text.rich for mixed,Many Text widgets for single styled text,DefaultTextStyle for subtree styling
+30,Testing,Widget testing,Test widgets in isolation,testWidgets for widget tests find.byType,Only integration tests or no tests,WidgetTester pumpWidget and interactions

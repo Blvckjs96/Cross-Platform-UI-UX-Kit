@@ -1,0 +1,303 @@
+{
+  "duration": {
+    "instant": {
+      "value": "0ms",
+      "tailwind": "duration-0",
+      "framer": "0",
+      "swiftui": "0",
+      "flutter": "Duration.zero",
+      "use": "No visible transition, immediate state change"
+    },
+    "fastest": {
+      "value": "50ms",
+      "tailwind": "duration-50",
+      "framer": "0.05",
+      "swiftui": "0.05",
+      "flutter": "Duration(milliseconds: 50)",
+      "use": "Micro-interactions, button press feedback"
+    },
+    "faster": {
+      "value": "100ms",
+      "tailwind": "duration-100",
+      "framer": "0.1",
+      "swiftui": "0.1",
+      "flutter": "Duration(milliseconds: 100)",
+      "use": "Quick feedback, hover states, toggle switches"
+    },
+    "fast": {
+      "value": "150ms",
+      "tailwind": "duration-150",
+      "framer": "0.15",
+      "swiftui": "0.15",
+      "flutter": "Duration(milliseconds: 150)",
+      "use": "Button interactions, tooltips appear"
+    },
+    "normal": {
+      "value": "200ms",
+      "tailwind": "duration-200",
+      "framer": "0.2",
+      "swiftui": "0.2",
+      "flutter": "Duration(milliseconds: 200)",
+      "use": "Default UI transitions, dropdowns, accordions"
+    },
+    "relaxed": {
+      "value": "300ms",
+      "tailwind": "duration-300",
+      "framer": "0.3",
+      "swiftui": "0.3",
+      "flutter": "Duration(milliseconds: 300)",
+      "use": "Modal open/close, sidebar toggle, emphasis"
+    },
+    "slow": {
+      "value": "500ms",
+      "tailwind": "duration-500",
+      "framer": "0.5",
+      "swiftui": "0.5",
+      "flutter": "Duration(milliseconds: 500)",
+      "use": "Page transitions, complex animations"
+    },
+    "slower": {
+      "value": "700ms",
+      "tailwind": "duration-700",
+      "framer": "0.7",
+      "swiftui": "0.7",
+      "flutter": "Duration(milliseconds: 700)",
+      "use": "Background transitions, ambient effects"
+    },
+    "slowest": {
+      "value": "1000ms",
+      "tailwind": "duration-1000",
+      "framer": "1",
+      "swiftui": "1",
+      "flutter": "Duration(seconds: 1)",
+      "use": "Loading sequences, intro animations"
+    }
+  },
+  "easing": {
+    "linear": {
+      "value": "linear",
+      "css": "linear",
+      "tailwind": "ease-linear",
+      "framer": "linear",
+      "swiftui": ".linear",
+      "flutter": "Curves.linear",
+      "use": "Progress bars, continuous animations"
+    },
+    "ease": {
+      "value": "ease",
+      "css": "ease",
+      "tailwind": "ease",
+      "framer": "easeInOut",
+      "swiftui": ".easeInOut",
+      "flutter": "Curves.ease",
+      "use": "General purpose, balanced feel"
+    },
+    "ease-in": {
+      "value": "cubic-bezier(0.4, 0, 1, 1)",
+      "css": "ease-in",
+      "tailwind": "ease-in",
+      "framer": "easeIn",
+      "swiftui": ".easeIn",
+      "flutter": "Curves.easeIn",
+      "use": "Exit animations, elements leaving view"
+    },
+    "ease-out": {
+      "value": "cubic-bezier(0, 0, 0.2, 1)",
+      "css": "ease-out",
+      "tailwind": "ease-out",
+      "framer": "easeOut",
+      "swiftui": ".easeOut",
+      "flutter": "Curves.easeOut",
+      "use": "Entrance animations, elements appearing"
+    },
+    "ease-in-out": {
+      "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "css": "ease-in-out",
+      "tailwind": "ease-in-out",
+      "framer": "easeInOut",
+      "swiftui": ".easeInOut",
+      "flutter": "Curves.easeInOut",
+      "use": "Symmetric transitions, toggles"
+    },
+    "spring": {
+      "value": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "css": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "tailwind": "custom",
+      "framer": "{ type: 'spring', stiffness: 400, damping: 17 }",
+      "swiftui": ".spring(response: 0.3, dampingFraction: 0.6)",
+      "flutter": "Curves.elasticOut",
+      "use": "Playful emphasis, bouncy interactions"
+    },
+    "bounce": {
+      "value": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "css": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "tailwind": "custom",
+      "framer": "{ type: 'spring', stiffness: 300, damping: 10 }",
+      "swiftui": ".spring(response: 0.4, dampingFraction: 0.4)",
+      "flutter": "Curves.bounceOut",
+      "use": "Attention-grabbing, fun UI elements"
+    },
+    "smooth": {
+      "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "css": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      "tailwind": "custom",
+      "framer": "[0.25, 0.1, 0.25, 1]",
+      "swiftui": ".timingCurve(0.25, 0.1, 0.25, 1)",
+      "flutter": "Cubic(0.25, 0.1, 0.25, 1)",
+      "use": "Premium feel, subtle transitions"
+    }
+  },
+  "keyframes": {
+    "fade-in": {
+      "from": { "opacity": 0 },
+      "to": { "opacity": 1 },
+      "tailwind": "animate-in fade-in",
+      "framer": "initial={{ opacity: 0 }} animate={{ opacity: 1 }}"
+    },
+    "fade-out": {
+      "from": { "opacity": 1 },
+      "to": { "opacity": 0 },
+      "tailwind": "animate-out fade-out",
+      "framer": "exit={{ opacity: 0 }}"
+    },
+    "slide-in-from-top": {
+      "from": { "transform": "translateY(-100%)" },
+      "to": { "transform": "translateY(0)" },
+      "tailwind": "animate-in slide-in-from-top",
+      "framer": "initial={{ y: '-100%' }} animate={{ y: 0 }}"
+    },
+    "slide-in-from-bottom": {
+      "from": { "transform": "translateY(100%)" },
+      "to": { "transform": "translateY(0)" },
+      "tailwind": "animate-in slide-in-from-bottom",
+      "framer": "initial={{ y: '100%' }} animate={{ y: 0 }}"
+    },
+    "slide-in-from-left": {
+      "from": { "transform": "translateX(-100%)" },
+      "to": { "transform": "translateX(0)" },
+      "tailwind": "animate-in slide-in-from-left",
+      "framer": "initial={{ x: '-100%' }} animate={{ x: 0 }}"
+    },
+    "slide-in-from-right": {
+      "from": { "transform": "translateX(100%)" },
+      "to": { "transform": "translateX(0)" },
+      "tailwind": "animate-in slide-in-from-right",
+      "framer": "initial={{ x: '100%' }} animate={{ x: 0 }}"
+    },
+    "zoom-in": {
+      "from": { "transform": "scale(0.95)", "opacity": 0 },
+      "to": { "transform": "scale(1)", "opacity": 1 },
+      "tailwind": "animate-in zoom-in-95",
+      "framer": "initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }}"
+    },
+    "zoom-out": {
+      "from": { "transform": "scale(1)", "opacity": 1 },
+      "to": { "transform": "scale(0.95)", "opacity": 0 },
+      "tailwind": "animate-out zoom-out-95",
+      "framer": "exit={{ scale: 0.95, opacity: 0 }}"
+    },
+    "spin": {
+      "from": { "transform": "rotate(0deg)" },
+      "to": { "transform": "rotate(360deg)" },
+      "tailwind": "animate-spin",
+      "framer": "animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 1 }}"
+    },
+    "pulse": {
+      "0%, 100%": { "opacity": 1 },
+      "50%": { "opacity": 0.5 },
+      "tailwind": "animate-pulse",
+      "framer": "animate={{ opacity: [1, 0.5, 1] }} transition={{ repeat: Infinity }}"
+    },
+    "bounce": {
+      "0%, 100%": { "transform": "translateY(-25%)", "animationTimingFunction": "cubic-bezier(0.8,0,1,1)" },
+      "50%": { "transform": "translateY(0)", "animationTimingFunction": "cubic-bezier(0,0,0.2,1)" },
+      "tailwind": "animate-bounce",
+      "framer": "animate={{ y: [0, -10, 0] }} transition={{ repeat: Infinity }}"
+    },
+    "shake": {
+      "0%, 100%": { "transform": "translateX(0)" },
+      "25%": { "transform": "translateX(-5px)" },
+      "75%": { "transform": "translateX(5px)" },
+      "tailwind": "custom",
+      "framer": "animate={{ x: [0, -5, 5, -5, 5, 0] }}"
+    },
+    "skeleton": {
+      "0%": { "backgroundPosition": "200% 0" },
+      "100%": { "backgroundPosition": "-200% 0" },
+      "tailwind": "animate-pulse bg-gradient-to-r from-muted via-muted/50 to-muted",
+      "note": "Shimmer effect for loading placeholders"
+    }
+  },
+  "presets": {
+    "button-hover": {
+      "duration": "fast",
+      "easing": "ease-out",
+      "properties": ["background-color", "border-color", "box-shadow"]
+    },
+    "button-press": {
+      "duration": "fastest",
+      "easing": "ease-in",
+      "transform": "scale(0.98)"
+    },
+    "modal-enter": {
+      "duration": "normal",
+      "easing": "ease-out",
+      "keyframe": "zoom-in"
+    },
+    "modal-exit": {
+      "duration": "fast",
+      "easing": "ease-in",
+      "keyframe": "zoom-out"
+    },
+    "dropdown-enter": {
+      "duration": "fast",
+      "easing": "ease-out",
+      "keyframe": "fade-in"
+    },
+    "sidebar-toggle": {
+      "duration": "relaxed",
+      "easing": "ease-in-out",
+      "keyframe": "slide-in-from-left"
+    },
+    "toast-enter": {
+      "duration": "relaxed",
+      "easing": "spring",
+      "keyframe": "slide-in-from-right"
+    },
+    "page-transition": {
+      "duration": "slow",
+      "easing": "ease-in-out",
+      "keyframe": "fade-in"
+    }
+  },
+  "reduced-motion": {
+    "note": "Respect prefers-reduced-motion media query",
+    "tailwind": "motion-reduce:transition-none motion-reduce:animate-none",
+    "css": "@media (prefers-reduced-motion: reduce) { animation: none; transition: none; }",
+    "swiftui": ".transaction { animation: nil }",
+    "flutter": "MediaQuery.of(context).disableAnimations",
+    "fallback": "Use opacity-only transitions as fallback"
+  },
+  "platform": {
+    "web": {
+      "implementation": "CSS transitions, Tailwind animate, Framer Motion",
+      "performance": "Use transform and opacity for GPU acceleration"
+    },
+    "electron": {
+      "implementation": "Same as web, respect system reduce-motion",
+      "note": "Match native app feel with spring animations"
+    },
+    "swiftui": {
+      "implementation": ".animation(), withAnimation {}, .transition()",
+      "spring": ".spring(response: 0.3, dampingFraction: 0.6)"
+    },
+    "react-native": {
+      "implementation": "Animated API, react-native-reanimated",
+      "performance": "Use useNativeDriver: true"
+    },
+    "flutter": {
+      "implementation": "AnimatedWidget, AnimationController, implicit animations",
+      "curves": "Curves.easeInOut, Curves.bounceOut"
+    }
+  }
+}

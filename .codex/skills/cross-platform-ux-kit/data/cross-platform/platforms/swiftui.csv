@@ -1,0 +1,31 @@
+No,Category,Guideline,Description,Do,Don't,Platform Notes
+1,Layout,Use native layout system,SwiftUI provides powerful layout primitives,VStack HStack ZStack with alignment and spacing,UIKit-style frame calculations for layout,GeometryReader only when absolutely necessary
+2,Layout,Respect safe areas,Content should not overlap system UI,SafeAreaInset for custom safe area handling,ignoresSafeArea without consideration,.safeAreaInset modifier for custom elements
+3,Layout,Use adaptive layouts,UI should adapt to device and orientation,ViewThatFits for adaptive content AnyLayout for dynamic,Fixed layouts that break on different devices,@Environment horizontalSizeClass for adaptation
+4,Navigation,Use NavigationStack,Modern navigation with path-based routing,NavigationStack with navigationDestination and path,Deprecated NavigationView or custom navigation,iOS 16+ NavigationStack is preferred
+5,Navigation,Handle deep linking,App should respond to URLs,onOpenURL modifier handle URL and navigate,Ignore incoming URLs,Universal Links and custom URL schemes
+6,Navigation,Support navigation gestures,iOS users expect gesture navigation,Allow system back swipe gesture,navigationBarBackButtonHidden without custom gesture,Interactive dismiss gesture on sheets
+7,Components,Use SF Symbols,Native icons that adapt to context,Image(systemName:) with symbol variants and rendering,Third-party icon libraries for system-style icons,2500+ symbols scale with Dynamic Type
+8,Components,Support Dynamic Type,Text should scale with user preference,@ScaledMetric for custom sizes Text scales automatically,Fixed font sizes ignoring accessibility,Test with largest accessibility text sizes
+9,Components,Use semantic colors,Colors should adapt to appearance,Color.primary Color.secondary Color.accentColor,Hardcoded colors that don't adapt,Asset catalog colors for custom with dark variant
+10,State,Understand property wrappers,Choose correct wrapper for state type,@State for local @Binding for passed @StateObject for reference,@State for reference types wrong wrapper choice,@ObservedObject for passed reference types
+11,State,Minimize view invalidation,Views rebuild when state changes,Keep state at lowest possible level in view hierarchy,All state at root causing full tree rebuild,@Observable macro in iOS 17+ for granular updates
+12,Gestures,Implement platform gestures,iOS users expect specific gestures,SwipeActions for list items DragGesture for custom,Non-standard gestures for common actions,Long press for context menu swipe for actions
+13,Gestures,Support simultaneous gestures,Multiple gestures may be active,simultaneousGesture for combined gesture handling,Blocking gestures that prevent standard interactions,Gesture priorities and coordination
+14,Animation,Use implicit animations,SwiftUI handles animation automatically,.animation modifier withAnimation block for implicit,Manual animation controllers like UIKit,Animation modifier after the value that changes
+15,Animation,Match platform animation,iOS has specific animation curves,.spring for interactive .easeInOut for transitions,Linear animations that feel mechanical,MatchedGeometryEffect for hero transitions
+16,Lists,Use List for scrolling content,List provides native styling and behavior,List with ForEach NavigationLink for navigation,ScrollView with VStack for long lists,List has built-in swipe actions sections refresh
+17,Lists,Implement swipe actions,List items should have quick actions,.swipeActions modifier for leading/trailing actions,Buttons inside row for all actions,Destructive actions should require confirmation
+18,Forms,Use Form for settings,Form provides grouped appearance,Form with Section headers and footers,Plain VStack for settings screens,Form adapts to platform (iPhone vs iPad vs Mac)
+19,Forms,Handle keyboard properly,Keyboard should not obscure inputs,.scrollDismissesKeyboard modifier keyboard avoidance,Keyboard covering input fields,FocusState for programmatic focus control
+20,Sheets,Use sheets for modal content,.sheet for modal presentation,.sheet .fullScreenCover for modal content,NavigationLink to modal screens,.presentationDetents for resizable sheets iOS 16+
+21,Sheets,Support dismiss gestures,Sheets should be swipe dismissable,Allow interactive dismiss handle onDismiss,Prevent dismiss without confirmation when needed,interactiveDismissDisabled for unsaved changes
+22,Menus,Use context menus,Long press shows context actions,.contextMenu modifier with Button actions,Custom popup menus reimplementing context menu,System context menu matches platform conventions
+23,Menus,Implement toolbar menus,.toolbar for navigation bar actions,.toolbar with ToolbarItem placements,Custom navigation bar implementations,Placement adapts to platform and context
+24,Accessibility,Support VoiceOver,Screen reader must work correctly,.accessibilityLabel .accessibilityHint modifiers,Inaccessible custom components,Test by enabling VoiceOver in Settings
+25,Accessibility,Implement accessibility actions,.accessibilityAction for custom actions,.accessibilityAction for non-obvious interactions,Custom gestures without accessibility alternative,Magic tap double-tap gestures for accessibility
+26,Performance,Avoid expensive view bodies,View body called frequently,Keep body computation fast move work outside,Heavy computation in view body,Computed properties for cached values
+27,Performance,Use task modifier correctly,.task for async work on appear,.task with proper cancellation handling,.onAppear for async work without cancellation,.task cancels automatically on view disappear
+28,Testing,Preview different states,Previews show different configurations,Multiple previews for states devices sizes,Single preview assuming one configuration,PreviewProvider with multiple configurations
+29,Platform,Adapt for iPad and Mac,App may run on multiple Apple platforms,Environment checks for platform-specific UI,iPhone-only design on larger screens,Catalyst and designed for iPad considerations
+30,Data,Use SwiftData or Core Data,Persistent storage has native solutions,SwiftData for iOS 17+ Core Data for older,UserDefaults for complex structured data,@Query for SwiftData integration with SwiftUI

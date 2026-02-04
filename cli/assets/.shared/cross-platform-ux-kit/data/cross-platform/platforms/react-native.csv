@@ -1,0 +1,31 @@
+No,Category,Guideline,Description,Do,Don't,Platform Notes
+1,Components,Use native components,Native components perform better than JS views,Pressable TouchableOpacity FlatList SectionList,View with onPress (not pressable) map for lists,Native components have platform-specific behaviors
+2,Components,Platform-specific components,Some components are platform-specific,Platform.select or .ios.js .android.js files,Same component regardless of platform differences,StatusBar DatePickerIOS/Android differ by platform
+3,Lists,Use FlatList for performance,FlatList virtualizes long lists,FlatList with keyExtractor renderItem,ScrollView with map for long lists,VirtualizedList for custom implementations
+4,Lists,Optimize list rendering,Lists are common performance bottleneck,getItemLayout for fixed heights removeClippedSubviews,Heavy renderItem components complex keys,memo for list items to prevent re-renders
+5,Navigation,Use React Navigation,Standard navigation library for React Native,@react-navigation/native with stack drawer bottom-tabs,Custom navigation implementation,React Navigation 6+ with native screens
+6,Navigation,Handle gestures correctly,iOS and Android have different back gestures,gestureEnabled iOS swipe back Android system back,Disable gestures without alternative,BackHandler for Android hardware back
+7,Navigation,Deep link support,App should handle incoming URLs,Linking API and navigation linking config,Ignore deep links to app,Universal links and app links configuration
+8,Styles,Use StyleSheet.create,StyleSheet provides optimization,StyleSheet.create for style definitions,Inline style objects recreated each render,Styles are frozen at creation for performance
+9,Styles,Handle platform differences,iOS and Android have different defaults,Platform.select for platform-specific styles,Single style assuming cross-platform identical,Shadows: iOS shadowX Android elevation
+10,Styles,Support dark mode,App should respond to system appearance,useColorScheme hook Appearance API,Hardcoded light mode only,Appearance.addChangeListener for updates
+11,Layout,Flexbox as layout model,React Native uses flexbox exclusively,flexDirection alignItems justifyContent flex,Web CSS properties that don't exist,Default flexDirection is column not row
+12,Layout,Handle safe areas,Content must not overlap notch or home indicator,SafeAreaView or react-native-safe-area-context,Fixed padding assuming no safe areas,useSafeAreaInsets for granular control
+13,Layout,Support different screen sizes,Many Android screen sizes exist,Dimensions API or useWindowDimensions,Fixed pixel values for all screens,PixelRatio for device-specific adjustments
+14,Animation,Use Native Driver,Native driver offloads to UI thread,useNativeDriver: true for transform opacity,Animating layout properties with native driver,Layout animations require JS thread
+15,Animation,Reanimated for complex animation,react-native-reanimated for performant animations,useSharedValue useAnimatedStyle for 60fps,Animated API for complex gesture-driven animation,Reanimated 2+ with worklets for performance
+16,Animation,LayoutAnimation for simple cases,LayoutAnimation for auto-layout changes,LayoutAnimation.configureNext before state change,Complex manual animations for list changes,Android requires UIManager.setLayoutAnimationEnabledExperimental
+17,Gestures,Use gesture handler,react-native-gesture-handler for gestures,GestureDetector Pan Tap LongPress handlers,Basic touch responder system,Gesture handler works on UI thread
+18,Gestures,Handle scroll interactions,Gestures and scroll can conflict,simultaneousHandlers and waitFor gesture coordination,Gestures blocking scroll or vice versa,Gesture composition for complex interactions
+19,Images,Optimize image loading,Images affect performance significantly,FastImage library cached network images,Image without caching or size optimization,Resize images to display size on server
+20,Images,Handle image failures,Network images can fail to load,onError handler defaultSource fallback,Silent failure on image load error,Placeholder or fallback for failed loads
+21,Storage,Use AsyncStorage carefully,AsyncStorage is string-based,AsyncStorage for simple data MMKV for performance,Large objects or frequent writes to AsyncStorage,MMKV or WatermelonDB for heavy storage needs
+22,Storage,Handle storage errors,Storage operations can fail,try-catch around all storage operations,Assume storage always succeeds,Fallback behavior for storage failures
+23,Performance,Avoid anonymous functions in props,New function reference causes re-render,useCallback for event handlers,onPress={() => handlePress(id)},Memoized callbacks or class methods
+24,Performance,Use memo strategically,memo prevents unnecessary re-renders,React.memo for pure functional components,memo everything without measurement,Profile before optimizing components
+25,Accessibility,Support screen readers,VoiceOver and TalkBack must work,accessible accessibilityLabel accessibilityHint,Inaccessible custom components,accessibilityRole for semantic meaning
+26,Accessibility,Handle accessibility focus,Focus management for screen readers,accessibilityViewIsModal setAccessibilityFocus,Modal content not properly focused,Focus trap for modal dialogs
+27,Text,Use Text for all text,Text component required for text rendering,Text component for all text content,Bare strings or text in View,Nesting Text for inline styles
+28,Text,Handle text scaling,System text size settings must be respected,allowFontScaling for text consider max scale,Fixed text sizes ignoring accessibility,maxFontSizeMultiplier for constrained areas
+29,Platform,Test on real devices,Simulators don't catch all issues,Test on physical iOS and Android devices,Simulator-only testing,Performance differs significantly on real devices
+30,Bridge,Minimize bridge traffic,JS-native communication has overhead,Batch updates reduce bridge calls,High-frequency updates across bridge,New Architecture Fabric and TurboModules improve this
